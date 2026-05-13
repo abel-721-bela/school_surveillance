@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Feed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="stream-container">
+        <div class="video-feed">
+            <h2>📷 Live Camera Feed</h2>
+            <img src="{{ url_for('video_feed') }}" alt="Live feed">
+        </div>
+        <div class="log-box">
+            <h2>🧑 Face Log</h2>
+            <ul id="log-list">
+                <!-- Logs will appear here -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const logList = document.getElementById('log-list');
+        const source = new EventSource('/logs');
+        source.onmessage = function(event) {
+            const li = document.createElement("li");
+            li.textContent = event.data;
+            logList.prepend(li);
+        };
+    </script>
+</body>
+</html>

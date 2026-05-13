@@ -1,0 +1,22 @@
+# Large binaries
+app.exe
+
+# Personal Data (Images)
+known_faces/*
+!known_faces/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# Pickles
+# backend/encodings.pickle
+
+# IDEs
+.vscode/
+.idea/

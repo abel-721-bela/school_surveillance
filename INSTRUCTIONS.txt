@@ -1,0 +1,26 @@
+🎓 SCHOOL SURVIVAL SYSTEM - SETUP & USAGE GUIDE
+
+1. INITIAL SETUP
+----------------
+Ensure you have Python installed. Then, install the required libraries:
+    pip install -r requirements.txt
+
+2. ENCODING FACES
+-----------------
+If you add new photos to the 'known_faces' folder, you must update the database:
+    python backend/encode_faces.py
+
+3. RUNNING THE SYSTEM
+---------------------
+To start the surveillance dashboard:
+    python app.py
+
+4. ACCESSING THE DASHBOARD
+--------------------------
+Open your browser and navigate to:
+    http://127.0.0.1:5000
+
+5. TROUBLESHOOTING
+------------------
+- If the camera doesn't start, check if another app is using it.
+- Ensure your images in 'known_faces' are clear and only contain one person.
